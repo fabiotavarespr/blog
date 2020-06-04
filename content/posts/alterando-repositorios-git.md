@@ -1,6 +1,6 @@
 ---
 author: "Fabio Tavares Pereira Rego"
-title: "Alterando o repositório remote com git"
+title: "Alterando repositório remote no git"
 date: 2020-06-04T11:27:07-03:00
 description: "Como levar seu código do gitlab para o github (ou vice-versa) sem perder seu histórico?"
 draft: true
