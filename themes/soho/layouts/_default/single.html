@@ -6,6 +6,8 @@
   <div class="post-date">
     <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time> · {{ .ReadingTime }} min read
   </div>
+  <p><strong>{{ .Description }}</strong></p>
+  <p></p>
   {{- end }}
 
   {{ .Content }}
