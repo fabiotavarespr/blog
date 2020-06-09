@@ -6,7 +6,6 @@ description: "Como levar seu código do gitlab para o github (ou vice-versa) sem
 draft: true
 tags:
     - git
-    - git remote
     - versionamento
 ---
 
