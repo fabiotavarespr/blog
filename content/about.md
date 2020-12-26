@@ -3,8 +3,8 @@ title: "Sobre"
 date: 2020-05-29T20:07:38-03:00
 ---
 
-#### Tenho mais de 16 anos de experiência profissional na área de TI.
+#### Tenho mais de 17 anos de experiência profissional na área de TI.
 
-Atualmente, trabalho na IBM como Engenheiro de Cloud DevOps e Desenvolvedor de Aplicação, onde implemento e mantenho infraestruturas que usa Terraform, Ansible, Azure, CI/CD, Docker Swarm e Kubernetes. Além disso, também desenvolvo novas ferramentas para dar suporte às infraestruturas.
+Atualmente, trabalho como Engenheiro de Software na Pismo, minha função é projetar fluxos e desenvolver/testar/entregar novos recursos para o setor bancário (carteiras digitais, entradas de contas) em um ambiente de alta disponibilidade e grande volume de dados.
 
-Trabalhei como Programador Java e Analista de Aplicação no desenvolvimento e manutenção de sistemas e infraestrutura em várias agências governamentais brasileiras.
+Trabalhei como Programador Java Full Stack e Analista de Aplicação no desenvolvimento e manutenção de sistemas e infraestrutura em várias agências governamentais brasileiras. 
