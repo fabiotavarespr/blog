@@ -29,7 +29,7 @@ $ git remote -v
 
 Como retorno, temos os repositórios remotos existentes.
 
-```sh
+```shell
 origin  https://github.com/fabiotavarespr/alterando-repositorio.git (fetch)
 origin  https://github.com/fabiotavarespr/alterando-repositorio.git (push)
 ```
@@ -39,12 +39,12 @@ O nome do repositório padrão é *origin*, esse nome é definido  no  copia e c
 
 Para visualizar melhor, vamos mudar esse nome para github.
 
-```sh
+```shell
 $ git remote rename origin github
 ```
 Listando os repositórios novamente, e veremos o resultado da alteração
 
-```sh
+```shell
 $ git remote -v  
 
 github  https://github.com/fabiotavarespr/alterando-repositorio.git (fetch)
@@ -55,13 +55,13 @@ github  https://github.com/fabiotavarespr/alterando-repositorio.git (push)
 
 Para adicionar o repositório remoto do gitlab no nosso repositório local vamos executar o seguinte comando.
 
-```sh
+```shell
 $ git remote add gitlab https://gitlab.com/fabiotavarespr/alterando-repositorio.git
 ```
 
 Com isso adicionamos o repositório remoto do gitlab, nomeamos ele como gitlab, ficando da seguinte forma a listagem dos repositórios.
 
-```sh
+```shell
 $ git remote -v 
 
 github  https://github.com/fabiotavarespr/alterando-repositorio.git (fetch)
@@ -72,7 +72,7 @@ gitlab  https://gitlab.com/fabiotavarespr/alterando-repositorio.git (push)
 
 Próximo passo agora, é sincronizar o repositório local com o repositório remoto, para isso vamos executar
 
-```sh
+```shell
 $ git push -u gitlab --all
 $ git push -u gitlab --tags
 ```
@@ -82,17 +82,17 @@ Conferindo os commits no gitlab, análise que eles ficam com o mesmo hash que no
 ![Relação de commits no repositório remoto do gitlab](https://fabiotavarespr.dev/images/commits-gitlab.png)
 
 Para remover qualquer um dos repositórios remotos basta executar *git remote remove $NOME_REPOSITORIO*, como exemplo.
-```sh
+```shell
 $ git remote remove github
 ```
 
 Para renomear um dos repositórios remotos basta executar *git remote remove $NOME_REPOSITORIO*, como exemplo.
-```sh
+```shell
 $ git remote rename gitlab origin
 ```
 
 Ficando no final assim, somente o repositório remoto do gitlab, com o nome origin.
-```sh
+```shell
 $ git remote -v
 
 origin  https://gitlab.com/fabiotavarespr/alterando-repositorio.git (fetch)

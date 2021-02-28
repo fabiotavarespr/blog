@@ -51,8 +51,12 @@ Para melhor ilustar, vamos trabalhar com a seguinte infraestrutura:
 
 Para configurar o Servidor DNS Primário, vamos utilizar a estrutura de exemplo disponível no projeto [labbsr0x/docker-dns-bind9](https://github.com/labbsr0x/docker-dns-bind9).
 
-```note
-Nota: Caso não seja do seu interesse utilizar a estrutura de exemplo, basta iniciar o container em um volume vazio, com isso o container iniciará uma estrutura do Bind9 nova, fique a vontade para fazer a configuração que melhor atenda sua realidade.
+```text
+Nota: Caso não seja do seu interesse utilizar a estrutura 
+de exemplo, basta iniciar o container em um volume vazio, 
+com isso o container iniciará uma estrutura do Bind9 nova, 
+fique a vontade para fazer a configuração que melhor atenda 
+sua realidade.
 ```
 
 Dentro da máquina **ns1 (IP 10.0.10.1)**, vamos realizar as seguintes ações
@@ -60,28 +64,28 @@ Dentro da máquina **ns1 (IP 10.0.10.1)**, vamos realizar as seguintes ações
 Para padronizar a instalação, vamos usar com base o diretório /opt
 
 
-```bash
-cd /opt
+```shell
+$ cd /opt
 ```
 
 Vamos realizar o clone do projeto no github, usaremos a estrutura de exemplo do projeto para ajudar na configuração.
 
-```bash
-git clone https://github.com/labbsr0x/docker-dns-bind9.git
+```shell
+$ git clone https://github.com/labbsr0x/docker-dns-bind9.git
 ```
 
 Criaremos um diretório que será utilizado como volume do DNS
 
-```bash
-mkdir /opt/bind9
+```shell
+$ mkdir /opt/bind9
 ```
 
 Vamos copiar a estrutura de diretório do DNS primário para o diretório que usaremos como volume do container e copiar também o arquivo de docker-compose
 
-```bash
-cp -r /opt/docker-dns-bind9/example/primary /opt/bind9/.
+```shell
+$ cp -r /opt/docker-dns-bind9/example/primary /opt/bind9/.
 
-cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
+$ cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
 ```
 
 ### Alterações nas configurações
@@ -89,8 +93,8 @@ cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
 Agora vamos alterar as configurações necessárias para configurar o Bind9.
 Começaremos editando o docker-compose.yml
 
-```bash
-vi /opt/bind9/docker-compose.yml
+```shell
+$ vi /opt/bind9/docker-compose.yml
 ```
 
 Vamos alterar o caminho do volume de origem, onde está **./bind9** vamos trocar para **/opt/bind9/primary**, ficando da seguinte forma.
@@ -105,14 +109,14 @@ A próxima configuração será criar a zona desejada no DNS, no exemplo do [lab
 
 Para realizar essa alteração, vamos renomear o arquivo **db.example.com** para **db.novodominio.com**
 
-```bash
-mv /opt/bind9/primary/bind/etc/db.example.com /opt/bind9/primary/bind/etc/db.novodominio.com
+```shell
+$ mv /opt/bind9/primary/bind/etc/db.example.com /opt/bind9/primary/bind/etc/db.novodominio.com
 ```
 
 Agora vamos realizar as alterações necessárias no arquivo de configuração da zona (**db.novodominio.com**) para ficar como proposto no objetivos.
 
-```bash
-vi /opt/bind9/primary/bind/etc/db.novodominio.com
+```shell
+$ vi /opt/bind9/primary/bind/etc/db.novodominio.com
 ```
 
 No arquivo de configuração, vamos alterar em todos os lugares que estão **db.example.com** para **db.novodominio.com**, e na relação de domínios, vamos alterar os IPs do **ns1**, **ns2**.
@@ -144,8 +148,8 @@ ns2             A       10.0.10.2   ; Change to the desired NS2 IP
 
 Com o nosso arquivo de zona criado, vamos adicionar ele no **named.conf.default-zones** e realizar as configurações necessários.
 
-```bash
-vi /opt/bind9/primary/bind/etc/named.conf.default-zones
+```shell
+$ vi /opt/bind9/primary/bind/etc/named.conf.default-zones
 ```
 
 No lugar que estiver a zona **example.com** vamos alterar para **novodominio.com**, colocaremos o caminho do arquivo de zona alterando de **db.example.com** para **db.novodominio.com** e por último, colocamos o **IP do NS2 no allow-transfer**, com isso o DNS Secundário receberá as informações do DNS Primário.
@@ -167,10 +171,10 @@ zone "novodominio.com" { // Change to desired zone
 
 Vamos para dentro do diretório que está o docker-compose.yml e iniciaremos o nosso novo DNS.
 
-```bash
-cd /opt/bind9/
+```shell
+$ cd /opt/bind9/
 
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 Para verificar se o container iniciou corretamente. Execute um **docker ps -a** e veja o status ou **docker-compose logs -f** e veja o log.
@@ -183,28 +187,28 @@ Dentro da máquina **ns2 (IP 10.0.10.2)**, vamos realizar as seguintes ações
 
 Para padronizar a instalação, vamos usar com base o diretório /opt
 
-```bash
-cd /opt
+```shell
+$ cd /opt
 ```
 
 Vamos realizar o clone do projeto no github, usaremos a estrutura de exemplo do projeto para ajudar na configuração.
 
-```bash
-git clone https://github.com/labbsr0x/docker-dns-bind9.git
+```shell
+$ git clone https://github.com/labbsr0x/docker-dns-bind9.git
 ```
 
 Criaremos um diretório que será utilizado como volume do DNS
 
-```bash
-mkdir /opt/bind9
+```shell
+$ mkdir /opt/bind9
 ```
 
 Vamos copiar a estrutura de diretório do DNS secundário para o diretório que usaremos como volume do container e copiar também o arquivo de docker-compose
 
-```bash
-cp -r /opt/docker-dns-bind9/example/secondary /opt/bind9/.
+```shell
+$ cp -r /opt/docker-dns-bind9/example/secondary /opt/bind9/.
 
-cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
+$ cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
 ```
 
 ### Alterações nas configurações
@@ -212,8 +216,8 @@ cp /opt/docker-dns-bind9/docker-compose.yml /opt/bind9/.
 Agora vamos alterar as configurações necessárias para configurar o Bind9.
 Começaremos editando o docker-compose.yml
 
-```bash
-vi /opt/bind9/docker-compose.yml
+```shell
+$ vi /opt/bind9/docker-compose.yml
 ```
 
 Vamos alterar o caminho do volume de origem, onde está **./bind9** vamos trocar para **/opt/bind9/secondary**, ficando da seguinte forma.
@@ -227,8 +231,8 @@ Vamos alterar o caminho do volume de origem, onde está **./bind9** vamos trocar
 No caso do DNS Secundário, ele replica as entradas do DNS Primário, com isso não é necessário criar o arquivo db.novodominio.com.
 Sendo necessário só alterar o arquivo **named.conf.default-zones** e realizar as configurações necessárias.
 
-```bash
-vi /opt/bind9/secondary/bind/etc/named.conf.default-zones
+```shell
+$ vi /opt/bind9/secondary/bind/etc/named.conf.default-zones
 ```
 
 No lugar que estiver a zona **example.com** vamos alterar para **novodominio.com**, colocaremos o caminho do arquivo de zona alterando de **db.example.com** para **db.novodominio.com** e por último, colocamos o IP do NS1 na campo master, com isso o DNS Secundário sabe qual é o DNS Primário.
@@ -247,10 +251,10 @@ zone "novodominio.com" {  // Change to desired zone
 
 Vamos para dentro do diretório que está o docker-compose.yml e iniciaremos o nosso DNS Secundário.
 
-```bash
-cd /opt/bind9/
+```shell
+$ cd /opt/bind9/
 
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 Para verificar se o container iniciou corretamente. Execute um **docker ps -a** e veja o status ou **docker-compose logs -f** e veja o log.
@@ -259,12 +263,9 @@ Para verificar se o container iniciou corretamente. Execute um **docker ps -a** 
 
 Vamos realizar um teste com o comando **dig**
 
-```bash
-dig -t ns novodominio.com @localhost +short
-```
+```shell
+$ dig -t ns novodominio.com @localhost +short
 
-O Resultado será o seguinte
-```bash
 ns1.novodominio.com.
 ns2.novodominio.com.
 ```
