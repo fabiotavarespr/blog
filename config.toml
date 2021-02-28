@@ -1,54 +1,43 @@
 baseURL = "https://fabiotavarespr.dev/"
 title = "Blog"
-theme = "soho"
+theme = "m10c"
 languageCode = "pt-BR"
-enableInlineShortcodes = true
-
-summarylength = 10
-enableEmoji = true
+paginate = 5
 
 [params]
 author = "@fabiotavarespr"
-description = "@fabiotavarespr"
+description = "Software Engineer, Developer and Architect. Go, Java, Docker, AWS and GCP"
 
 ## Set one of:
-# gravatar = "soho@example.com"
-profilePicture = "images/avatar.jpg"
+avatar = "images/avatar.jpg"
+favicon = "http://fabiotavarespr.dev/favicon.png"
+menu_item_separator = "<br/>"
 
-copyright = "Fabio Tavares Pereira Rego"
-#license = "CC BY-SA 4.0"
-#licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
-BuiltWith = true
-
-## Set custom theme color.
-# themeColor = "#fc2803"
-
-## Set custom CSS and/or JS to override site defaults.
-customCss = ["css/blog.css"]
-customJs = ["js/blog.js"]
 
   ## Set as many as you want.
-  [[params.socialIcons]]
-  icon = "fa-linkedin"
-  title = "Linkedin"
-  url = "https://www.linkedin.com/in/fabiotavarespr/"
-
-  [[params.socialIcons]]
-  icon = "fa-github"
-  title = "GitHub"
+  [[params.social]]
+  name = "github"
   url = "https://github.com/fabiotavarespr"
 
-  [[params.socialIcons]]
-  icon = "fa-instagram"
-  title = "Instagram"
+  [[params.social]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/fabiotavarespr/"
+
+  [[params.social]]
+  name = "instagram"
   url = "http://instagram.com/fabiotavarespr"
 
-  [[params.socialIcons]]
-  icon = "fa-twitter"
-  title = "Twitter"
+  [[params.social]]
+  name = "twitter"
   url = "https://twitter.com/fabiotavarespr"
 
 [menu]
+
+  [[menu.main]]
+  name = "Home"
+  weight = 100
+  identifier = "home"
+  url = "/"
 
   [[menu.main]]
   name = "Posts"
@@ -67,21 +56,3 @@ customJs = ["js/blog.js"]
   identifier = "Resume"
   weight = 300
   url = "https://fabiotavarespr.github.io/resume"
-
-[taxonomies]
-  category = "categories"
-  series = "series"
-  tag = "tags"
-
-[markup]
-
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = true # if false, you need to provide you own custom CSS
-    style = "monokai"
-    tabWidth = 4

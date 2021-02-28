@@ -52,10 +52,8 @@ Para melhor ilustar, vamos trabalhar com a seguinte infraestrutura:
 Para configurar o Servidor DNS Primário, vamos utilizar a estrutura de exemplo disponível no projeto [labbsr0x/docker-dns-bind9](https://github.com/labbsr0x/docker-dns-bind9).
 
 ```text
-Nota: Caso não seja do seu interesse utilizar a estrutura 
-de exemplo, basta iniciar o container em um volume vazio, 
-com isso o container iniciará uma estrutura do Bind9 nova, 
-fique a vontade para fazer a configuração que melhor atenda 
+Nota: Caso não seja do seu interesse utilizar a estrutura de exemplo, basta iniciar o container em um volume vazio, 
+com isso o container iniciará uma estrutura do Bind9 nova, fique a vontade para fazer a configuração que melhor atenda 
 sua realidade.
 ```
 

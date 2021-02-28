@@ -1,0 +1,59 @@
+baseURL = "https://fabiotavarespr.dev/"
+title = "Blog"
+theme = "m10c"
+languageCode = "pt-BR"
+enableInlineShortcodes = true
+paginate = 5
+
+[params]
+author = "@fabiotavarespr"
+description = "Software Engineer, Developer and Architect. Go, Java, Docker, AWS and GCP"
+
+## Set one of:
+avatar = "images/avatar.jpg"
+favicon = "http://fabiotavarespr.dev/favicon.png"
+menu_item_separator = "<br/>"
+
+
+## Set as many as you want.
+[[params.social]]
+name = "github"
+url = "https://github.com/fabiotavarespr"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/fabiotavarespr/"
+
+[[params.social]]
+name = "instagram"
+url = "http://instagram.com/fabiotavarespr"
+
+[[params.social]]
+name = "twitter"
+url = "https://twitter.com/fabiotavarespr"
+
+[menu]
+
+[[menu.main]]
+name = "Home"
+weight = 100
+identifier = "home"
+url = "/"
+
+[[menu.main]]
+name = "Posts"
+weight = 100
+identifier = "posts"
+url = "/posts/"
+
+[[menu.main]]
+name = "Sobre"
+identifier = "about"
+weight = 200
+url = "/about/"
+
+[[menu.main]]
+name = "Currículo"
+identifier = "Resume"
+weight = 300
+url = "https://fabiotavarespr.github.io/resume"

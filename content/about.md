@@ -3,7 +3,7 @@ title: "Sobre"
 date: 2020-05-29T20:07:38-03:00
 ---
 
-#### Tenho mais de 17 anos de experiência profissional na área de TI.
+#### Tenho experiência profissional trabalhando na área de TI desde 2005.
 
 Atualmente, trabalho como Engenheiro de Software na Pismo, a minha função é projetar fluxos e desenvolver/testar/entregar novos recursos para o setor bancário (carteiras digitais, entradas de contas) em um ambiente de alta disponibilidade e grande volume de dados.
 
