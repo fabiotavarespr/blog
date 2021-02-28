@@ -68,15 +68,20 @@ customJs = ["js/blog.js"]
   weight = 300
   url = "https://fabiotavarespr.github.io/resume"
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
 [markup]
 
   [markup.highlight]
-  codeFences = true
-  guessSyntax = false
-  hl_Lines = ""
-  lineNoStart = 1
-  lineNos = false
-  lineNumbersInTable = true
-  noClasses = true # if false, you need to provide you own custom CSS
-  style = "monokai"
-  tabWidth = 4
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true # if false, you need to provide you own custom CSS
+    style = "monokai"
+    tabWidth = 4
