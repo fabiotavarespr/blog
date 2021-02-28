@@ -1,10 +1,9 @@
 ---
 author: "Barbara Oakley"
 title: "10 Regras de bom e mau estudo"
-date: 2020-06-05T10:32:06-03:00
+date: 2100-06-05T10:32:06-03:00
 description: "10 Regras de bom e mau estudo (10 Rules of Studying in Portuguese) By Barbara Oakley, PhD, PE, translated by Manuel Paquete"
 draft: true
-hidden: true
 tags:
     - learning
     - aprendizado

@@ -1,10 +1,9 @@
 ---
 author: "Barbara Oakley"
 title: "10 Rules of Studying"
-date: 2020-06-05T10:36:37-03:00
+date: 2100-06-05T10:36:37-03:00
 description: "10 Rules of Studying"
 draft: true
-hidden: true
 tags:
     - learning
     - aprendizado
