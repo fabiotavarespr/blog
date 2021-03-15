@@ -12,7 +12,8 @@ tags:
 # Docker Cheat Sheet
 
 Cheat Sheet com comandos docker úteis.
-Sempre que encontrar comando novo, vou adicionando comandos.
+
+Sempre que encontrar novos comandos necessários irei adicionando.
 
 
 ### Lista todas as imagens docker
@@ -71,7 +72,7 @@ docker logs -f <nome_do_container> ou <id_do_container>
 ```
 
 ### Deleta todos os container
-Use -f para deletar docker rodando.
+Use forçar -f para deletar docker rodando.
 ```shell
 docker rm $(docker ps -a -q)
 ```
