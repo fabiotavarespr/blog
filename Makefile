@@ -1,43 +1,32 @@
 IMAGE=klakegg/hugo
-VERSION=0.81.0
+VERSION=0.83.1
 PORT=1313
 NEW_POST='SET NEW POST'
 
-GREEN  := $(shell tput -Txterm setaf 2)
-YELLOW := $(shell tput -Txterm setaf 3)
-WHITE  := $(shell tput -Txterm setaf 7)
-RESET  := $(shell tput -Txterm sgr0)
-
 all: help
 
-start-server:
+start-server: ## Started local server
 	@docker run --rm -it -v $(shell pwd):/src -p ${PORT}:${PORT} ${IMAGE}:${VERSION} server -D
 
-build:
+build: ## Create a new build
 	@docker run --rm -it -v $(shell pwd):/src -p ${PORT}:${PORT} ${IMAGE}:${VERSION} -D
 
-new-post:
+new-post: ## Create a new post, needed set NEW_POST
 ifeq ($(NEW_POST), 'SET NEW POST')
 	@echo 'Set NEW_POST path, example NEW_POST=posts/new_post.md'
 else
 	@docker run --rm -it -v $(shell pwd):/src -p ${PORT}:${PORT} ${IMAGE}:${VERSION} new $(NEW_POST)
 endif
 
-git-init-submodule:
+git-init-submodule: ## Init submodules
 	@git submodule update --init --recursive
 
-git-update-submodule:
+git-update-submodule: ## Update submodules
 	@git submodule update --recursive --remote
 
-help:
-	@echo ''
-	@echo 'Usage:'
-	@echo '  ${YELLOW}make${RESET} ${GREEN}<target>${RESET}'
-	@echo ''
-	@echo 'Targets:'
-	@echo "  ${YELLOW}start-server		${RESET} ${GREEN}Started local server${RESET}"
-	@echo "  ${YELLOW}build			${RESET} ${GREEN}Create a new build${RESET}"
-	@echo "  ${YELLOW}new-post		${RESET} ${GREEN}Create a new post, needed set NEW_POST${RESET}"
-	@echo "  ${YELLOW}git-init-submodule	${RESET} ${GREEN}Init submodules${RESET}"
-	@echo "  ${YELLOW}git-update-submodule	${RESET} ${GREEN}Update submodules${RESET}"
-	@echo "  ${YELLOW}help			${RESET} ${GREEN}Show this help message${RESET}"
+help: ## Display help screen
+	@echo "Usage:"
+	@echo "	make [COMMAND]"
+	@echo "	make help \n"
+	@echo "Commands: \n"
+	@grep -h -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[33m%-30s\033[36m %s\n", $$1, $$2}'
