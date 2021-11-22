@@ -2,7 +2,7 @@ baseURL = "https://fabiotavarespr.dev/"
 title = "Blog"
 theme = "m10c"
 languageCode = "pt-BR"
-paginate = 8
+paginate = 10
 
 [params]
 author = "@fabiotavarespr"
