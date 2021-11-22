@@ -2,7 +2,7 @@ baseURL = "https://fabiotavarespr.dev/"
 title = "Blog"
 theme = "m10c"
 languageCode = "pt-BR"
-paginate = 5
+paginate = 8
 
 [params]
 author = "@fabiotavarespr"
@@ -17,18 +17,22 @@ menu_item_separator = "<br/>"
   ## Set as many as you want.
   [[params.social]]
   name = "github"
+  icon = "github"
   url = "https://github.com/fabiotavarespr"
 
   [[params.social]]
   name = "linkedin"
+  icon = "linkedin"
   url = "https://www.linkedin.com/in/fabiotavarespr/"
 
   [[params.social]]
   name = "instagram"
+  icon = "instagram"
   url = "http://instagram.com/fabiotavarespr"
 
   [[params.social]]
   name = "twitter"
+  icon = "twitter"
   url = "https://twitter.com/fabiotavarespr"
 
 [menu]
