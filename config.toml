@@ -45,18 +45,24 @@ menu_item_separator = "<br/>"
 
   [[menu.main]]
   name = "Posts"
-  weight = 100
+  weight = 200
   identifier = "posts"
   url = "/posts/"
 
   [[menu.main]]
+  name = "Tags"
+  weight = 300
+  identifier = "tags"
+  url = "/tags/"
+
+  [[menu.main]]
   name = "Sobre"
   identifier = "about"
-  weight = 200
+  weight = 400
   url = "/about/"
 
   [[menu.main]]
   name = "Currículo"
   identifier = "Resume"
-  weight = 300
+  weight = 500
   url = "https://fabiotavarespr.github.io/resume"
