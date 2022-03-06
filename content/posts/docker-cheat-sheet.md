@@ -7,6 +7,7 @@ draft: true
 tags:
     - docker
     - cheatsheet
+    - reference
 ---
 
 # Docker Cheat Sheet
