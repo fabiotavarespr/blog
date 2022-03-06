@@ -14,6 +14,8 @@ tags:
 
 Sempre que eu tenho que realizar uma alteração de coluna no MySQL (atividade que não é tão frequente), eu acabou esquecendo a diferença entre ALTER COLUMN, CHANGE COLUMN e MODIFY COLUMN.
 
+Aqui vai uma referencia para ajudar.
+
 ### ALTER COLUMN
 Usado para definir ou remover o valor padrão de uma coluna.
 ```sql
@@ -21,7 +23,7 @@ ALTER TABLE nomeTabela ALTER COLUMN foo SET DEFAULT 'bar';
 ALTER TABLE nomeTabela ALTER COLUMN foo DROP DEFAULT;
 ```
 
-###CHANGE COLUMN
+### CHANGE COLUMN
 Usado para renomear uma coluna, alterar seu tipo de dados. 
 ```sql
 ALTER TABLE nomeTabela CHANGE COLUMN foo foo VARCHAR(32) NOT NULL;
