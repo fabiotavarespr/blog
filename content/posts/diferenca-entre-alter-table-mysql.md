@@ -12,9 +12,9 @@ tags:
 
 # MySQL ALTER TABLE: ALTER vs CHANGE vs MODIFY COLUMN
 
-Sempre que eu tenho que realizar uma alteração de coluna no MySQL (atividade que não é tão frequente), eu acabou esquecendo a diferença entre ALTER COLUMN, CHANGE COLUMN e MODIFY COLUMN.
+Sempre que tenho que realizar uma alteração de coluna no MySQL (atividade que não é tão frequente), eu acabou esquecendo a diferença entre ALTER COLUMN, CHANGE COLUMN e MODIFY COLUMN.
 
-Aqui vai uma referencia para ajudar.
+Aqui vai uma referência para ajudar a relembrar.
 
 ### ALTER COLUMN
 Usado para definir ou remover o valor padrão de uma coluna.
